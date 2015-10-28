@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 448840}
   - 33: {fileID: 3342854}
   - 23: {fileID: 2333206}
+  - 136: {fileID: 13676948}
   m_Layer: 0
   m_Name: Whacker
   m_TagString: Untagged
@@ -44,6 +45,7 @@ GameObject:
   - 92: {fileID: 9241338}
   - 124: {fileID: 12474794}
   - 81: {fileID: 8126364}
+  - 114: {fileID: 11461402}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -168,6 +170,17 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128964}
   m_Enabled: 1
+--- !u!114 &11461402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b4581612e1185459d4bd01ea35702d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12474794
 Behaviour:
   m_ObjectHideFlags: 1
@@ -175,6 +188,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128964}
   m_Enabled: 1
+--- !u!136 &13676948
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .50000006
+  m_Height: 1.99999976
+  m_Direction: 1
+  m_Center: {x: 5.96046448e-08, y: 4.23516474e-22, z: -8.9406953e-08}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
