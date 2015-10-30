@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Food : MonoBehaviour {
 
+    private bool onGround = false;
+
 	// Use this for initialization
 	void Start () {
 	     
@@ -13,6 +15,7 @@ public class Food : MonoBehaviour {
         int layer = c.gameObject.layer;
         if (layer == LayerMask.NameToLayer("Ground"))
         {
+            onGround = true;
             StartCoroutine(CommitSudoku());
         }
     }
@@ -20,7 +23,7 @@ public class Food : MonoBehaviour {
     void OnTriggerEnter(Collider c)
     {
         int layer = c.gameObject.layer;
-        if (layer == LayerMask.NameToLayer("Horn"))
+        if (layer == LayerMask.NameToLayer("Horn") && !onGround)
         {
             gameObject.layer = LayerMask.NameToLayer("FoodOnHorn");
         }
