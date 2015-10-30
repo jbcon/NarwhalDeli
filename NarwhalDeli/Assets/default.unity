@@ -178,6 +178,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 13545108, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: m_Radius
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 13545108, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: m_Center.y
+      value: 1.30999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 13676948, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: m_Center.y
+      value: -.140000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 13676948, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: m_Height
+      value: 1.94000006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
   m_IsPrefabParent: 0
@@ -441,6 +457,10 @@ Prefab:
     - target: {fileID: 142772, guid: 12d894eeab1035744b7235b8961e415f, type: 2}
       propertyPath: m_Name
       value: Front Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485212, guid: 12d894eeab1035744b7235b8961e415f, type: 2}
+      propertyPath: force
+      value: 13.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12d894eeab1035744b7235b8961e415f, type: 2}

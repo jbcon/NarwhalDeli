@@ -24,7 +24,7 @@ public class BallLauncher : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("FIRE!!!");
+            //Debug.Log("FIRE!!!");
             yield return new WaitForSeconds(interval);
             GameObject b = Instantiate(projectile) as GameObject;
             b.transform.position = transform.position;

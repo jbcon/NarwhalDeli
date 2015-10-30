@@ -11,8 +11,8 @@ GameObject:
   - 54: {fileID: 5431266}
   - 23: {fileID: 2364448}
   - 33: {fileID: 3331044}
-  - 135: {fileID: 13519380}
   - 114: {fileID: 11476134}
+  - 65: {fileID: 6540784}
   m_Layer: 0
   m_Name: Patty
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106302}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -3.0065167, y: .5, z: -5.03509808}
+  m_LocalPosition: {x: -.00921734981, y: .0500000007, z: 1.45268536}
   m_LocalScale: {x: 1, y: .0500000007, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,6 +78,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6540784
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.00000012, y: 2, z: 1.00000024}
+  m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
 --- !u!114 &11476134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,18 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48029571dc4388d4486a867863d0260e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &13519380
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106302}
-  m_Material: {fileID: 13400000, guid: 52baaeb214519f347a35cf0edfd262ff, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
