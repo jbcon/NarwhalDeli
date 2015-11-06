@@ -7,7 +7,7 @@ public class NoVrMouselook : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 	    //check for oculus
-        if (!VRDevice.isPresent)
+        if (VRDevice.isPresent)
         {
             Debug.Log("Detected " + VRSettings.loadedDevice);
         }
