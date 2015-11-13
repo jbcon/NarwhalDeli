@@ -34,7 +34,7 @@ public class NoVrMouselook : MonoBehaviour {
             float movZ = Input.GetAxisRaw("Vertical") * zMovement;
             Quaternion yRot = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
 
-            transform.position = Vector3.Slerp(transform.position,initialPos + yRot * new Vector3(movX, 0, movZ ), Time.deltaTime * snapSpeed);
+            transform.position = Vector3.Lerp(transform.position,initialPos + yRot * new Vector3(movX, 0, movZ ), Time.deltaTime * snapSpeed);
         }
 	}
 }

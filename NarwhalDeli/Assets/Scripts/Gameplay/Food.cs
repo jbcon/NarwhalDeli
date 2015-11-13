@@ -3,11 +3,17 @@ using System.Collections;
 
 public class Food : MonoBehaviour {
 
+    [SerializeField]
+    public static float flotationConstant = 1f;
+
+    private Rigidbody rb;
     private bool onGround = false;
+    private static float waterHeight;
 
 	// Use this for initialization
 	void Start () {
-	     
+        waterHeight = GameObject.FindGameObjectWithTag("Water").transform.position.y+0.2f;
+        rb = GetComponent<Rigidbody>();
 	}
 	
     void OnCollisionEnter(Collision c)
@@ -28,6 +34,18 @@ public class Food : MonoBehaviour {
             gameObject.layer = LayerMask.NameToLayer("FoodOnHorn");
             GetComponent<Rigidbody>().isKinematic = true;
             c.GetComponent<Horn>().AttachFood(gameObject);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        //buoyant force
+        if (transform.position.y < waterHeight)
+        {
+            rb.velocity *= 0.3f;
+            rb.AddForce((waterHeight - transform.position.y) * Vector3.up, ForceMode.Impulse);
+            Quaternion targetRot = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime);
         }
     }
 
