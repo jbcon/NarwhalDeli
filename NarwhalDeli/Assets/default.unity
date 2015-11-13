@@ -178,6 +178,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: foodHeight
+      value: .0199999996
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
   m_IsPrefabParent: 0
