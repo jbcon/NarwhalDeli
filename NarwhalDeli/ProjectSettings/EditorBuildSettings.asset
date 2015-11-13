@@ -11,5 +11,9 @@ EditorBuildSettings:
     path: Assets/OSVRUnity/Sample/Demo/Scenes/OSVRDemo.unity
   - enabled: 0
     path: Assets/OSVRUnity/Sample/Demo/Scenes/OSVRDemo2.unity
+  - enabled: 0
+    path: Assets/CAVE.unity
+  - enabled: 0
+    path: Assets/CAVE.unity
   - enabled: 1
-    path: Assets/default.unity
+    path: Assets/CAVE.unity
