@@ -56,10 +56,15 @@ public class Food : MonoBehaviour {
     public IEnumerator SlideDownHorn(Vector3 target, Quaternion endRot, float time)
     {
         float elapsed = 0;
+
+        Quaternion finalRot = Quaternion.Euler(endRot.eulerAngles.x,
+                                            transform.localRotation.eulerAngles.y,
+                                            endRot.eulerAngles.z);
+
         while (elapsed < time)
         {
             transform.localPosition = Vector3.Slerp(transform.localPosition, target, elapsed/time);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, endRot, elapsed/time);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, finalRot, elapsed/time);
             elapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
