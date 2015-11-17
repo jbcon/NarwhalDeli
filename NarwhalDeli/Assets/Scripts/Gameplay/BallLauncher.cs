@@ -8,6 +8,7 @@ public class BallLauncher : MonoBehaviour
     public GameObject projectile;
     public float force = 10f;
     public float spinning = 2f;
+    public bool randomForce = true;
 
     // Use this for initialization
     void Start()
@@ -30,7 +31,16 @@ public class BallLauncher : MonoBehaviour
             GameObject b = Instantiate(projectile) as GameObject;
             b.transform.position = transform.position;
             Rigidbody rb = b.GetComponent<Rigidbody>();
-            rb.AddForce(Quaternion.Euler(0,0,0) * transform.forward * force, ForceMode.Impulse);
+            float f;
+            if (randomForce)
+            {
+                f = Random.Range(1, 1) * force;
+            }
+            else
+            {
+                f = (Random.value + 1) * force;
+            }
+            rb.AddForce(Quaternion.Euler(0,0,0) * transform.forward * f, ForceMode.Impulse);
             Quaternion spin = Random.rotationUniform;
             rb.AddTorque(spin.eulerAngles * spinning, ForceMode.Impulse);            
         }
