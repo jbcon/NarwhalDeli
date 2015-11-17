@@ -32,9 +32,7 @@ public class BallLauncher : MonoBehaviour
             Rigidbody rb = b.GetComponent<Rigidbody>();
             rb.AddForce(Quaternion.Euler(0,0,0) * transform.forward * force, ForceMode.Impulse);
             Quaternion spin = Random.rotationUniform;
-            rb.AddTorque(spin.eulerAngles * spinning, ForceMode.Impulse);
-            Debug.Log(spin);
-            
+            rb.AddTorque(spin.eulerAngles * spinning, ForceMode.Impulse);            
         }
     }
 }

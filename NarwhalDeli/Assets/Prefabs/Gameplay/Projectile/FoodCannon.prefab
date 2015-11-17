@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 438854}
+  - 114: {fileID: 11434674}
   m_Layer: 0
   m_Name: FoodCannon
   m_TagString: Untagged
@@ -117,6 +118,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158944}
   m_Mesh: {fileID: 4300002, guid: 25712b9d3dd0eb4439390fb8fea8043e, type: 3}
+--- !u!114 &11434674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c384ea2b6b26864890d5d22a8fb4c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackRange: 20
+  oscillationSpeed: .100000001
 --- !u!114 &11485212
 MonoBehaviour:
   m_ObjectHideFlags: 1

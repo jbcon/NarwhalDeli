@@ -57,6 +57,7 @@ public class Food : MonoBehaviour {
     {
         float elapsed = 0;
 
+        // So they are rotated differently on the horn, but still stack
         Quaternion finalRot = Quaternion.Euler(endRot.eulerAngles.x,
                                             transform.localRotation.eulerAngles.y,
                                             endRot.eulerAngles.z);
