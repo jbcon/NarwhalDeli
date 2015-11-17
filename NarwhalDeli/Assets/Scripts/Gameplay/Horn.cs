@@ -21,7 +21,6 @@ public class Horn : MonoBehaviour {
         // 45 degrees?
 
         float aligned = Vector3.Dot(-transform.up, food.GetComponent<Rigidbody>().velocity.normalized);
-        Debug.Log(aligned);
         if (aligned < 0.5f)
         {
             Debug.Log("NOPE!");
