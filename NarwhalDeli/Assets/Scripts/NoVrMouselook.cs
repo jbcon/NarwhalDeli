@@ -13,7 +13,7 @@ public class NoVrMouselook : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 	    //check for oculus
-        if (VRDevice.isPresent)
+        if (!VRDevice.isPresent)
         {
             Debug.Log("Detected " + VRSettings.loadedDevice);
         }
@@ -28,7 +28,7 @@ public class NoVrMouselook : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (!VRDevice.isPresent)
+	    if (VRDevice.isPresent)
         {
             float movX = Input.GetAxisRaw("Horizontal") * xMovement;
             float movZ = Input.GetAxisRaw("Vertical") * zMovement;

@@ -16,15 +16,30 @@ public class Horn : MonoBehaviour {
 	
     public void AttachFood(GameObject food)
     {
-        food.transform.parent = transform;
-        Food f = food.GetComponent<Food>();
-        food.transform.localPosition = Vector3.zero;
-        StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
-        bottom.transform.position += bottom.transform.up * foodHeight;
+        // make sure that the food is going towards the horn
+        // do some dot product shit
+        // 45 degrees?
+
+        float aligned = Vector3.Dot(-transform.up, food.GetComponent<Rigidbody>().velocity.normalized);
+        Debug.Log(aligned);
+        if (aligned < 0.5f)
+        {
+            Debug.Log("NOPE!");
+        }
+        else
+        {
+            food.GetComponent<Rigidbody>().isKinematic = true;
+            food.transform.parent = transform;
+            Food f = food.GetComponent<Food>();
+            food.transform.localPosition = Vector3.zero;
+            StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
+            bottom.transform.position += bottom.transform.up * foodHeight;
+        }
     }
 
 	// Update is called once per frame
 	void Update () {
+        Debug.DrawRay(transform.position, transform.up * 20, Color.green);
 
     }
 }

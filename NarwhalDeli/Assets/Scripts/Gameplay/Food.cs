@@ -19,7 +19,7 @@ public class Food : MonoBehaviour {
     void OnCollisionEnter(Collision c)
     {
         int layer = c.gameObject.layer;
-        if (layer == LayerMask.NameToLayer("Ground"))
+        if (layer == LayerMask.NameToLayer("Water"))
         {
             onGround = true;
             StartCoroutine(CommitSudoku());
@@ -32,7 +32,6 @@ public class Food : MonoBehaviour {
         if (layer == LayerMask.NameToLayer("Horn") && !onGround)
         {
             gameObject.layer = LayerMask.NameToLayer("FoodOnHorn");
-            GetComponent<Rigidbody>().isKinematic = true;
             c.GetComponent<Horn>().AttachFood(gameObject);
         }
     }
@@ -51,7 +50,7 @@ public class Food : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        
+        Debug.DrawRay(transform.position, GetComponent<Rigidbody>().velocity, Color.red);
 	}
 
     public IEnumerator SlideDownHorn(Vector3 target, Quaternion endRot, float time)
