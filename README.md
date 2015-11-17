@@ -4,5 +4,5 @@ A game for the Oculus Rift.  Play as a Narwhal working in the world's strangest 
 
 # Collaborators:
    - John Conover
-   - Terence Farrel
+   - Terence Farrell
    - Enoch Huang
