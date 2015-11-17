@@ -50,7 +50,7 @@ public class Food : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawRay(transform.position, GetComponent<Rigidbody>().velocity, Color.red);
+        //Debug.DrawRay(transform.position, GetComponent<Rigidbody>().velocity, Color.red);
 	}
 
     public IEnumerator SlideDownHorn(Vector3 target, Quaternion endRot, float time)
