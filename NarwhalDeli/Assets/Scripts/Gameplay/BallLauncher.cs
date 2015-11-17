@@ -40,7 +40,7 @@ public class BallLauncher : MonoBehaviour
             {
                 f = (Random.value + 1) * force;
             }
-            rb.AddForce(Quaternion.Euler(0,0,0) * transform.forward * f, ForceMode.Impulse);
+            rb.AddForce(Quaternion.Euler(0,0,0) * transform.up * f, ForceMode.Impulse);
             Quaternion spin = Random.rotationUniform;
             rb.AddTorque(spin.eulerAngles * spinning, ForceMode.Impulse);            
         }
