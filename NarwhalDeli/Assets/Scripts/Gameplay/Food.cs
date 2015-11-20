@@ -43,7 +43,7 @@ public class Food : MonoBehaviour {
         {
             rb.velocity *= 0.3f;
             rb.AddForce((waterHeight - transform.position.y) * Vector3.up, ForceMode.Impulse);
-            Quaternion targetRot = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+            Quaternion targetRot = Quaternion.identity;
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime);
         }
     }
