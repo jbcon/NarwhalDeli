@@ -34,13 +34,13 @@ public class BallLauncher : MonoBehaviour
             float f;
             if (randomForce)
             {
-                f = (Random.value/3 + 0.66f) * force;
+                f = force - Random.value*1.5f;
             }
             else
             {
                 f = force;
             }
-            Debug.Log(f);
+            // Debug.Log(f);
             rb.AddForce(Quaternion.Euler(0,0,0) * transform.up * f, ForceMode.Impulse);
             Quaternion spin = Random.rotationUniform;
             rb.AddTorque(spin.eulerAngles * spinning, ForceMode.Impulse);            
