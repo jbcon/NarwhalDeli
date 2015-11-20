@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interval: 1
   projectile: {fileID: 106302, guid: 169c498fb84c1f7499106e99cbba5903, type: 2}
-  force: 11
+  force: 9
   spinning: 100
   randomForce: 1
 --- !u!1001 &100100000
@@ -157,6 +157,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: Launcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: force
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
