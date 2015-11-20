@@ -5,6 +5,7 @@ public class Food : MonoBehaviour {
 
     [SerializeField]
     public static float flotationConstant = 1f;
+    public bool isBread = false;
 
     private Rigidbody rb;
     private bool onGround = false;
