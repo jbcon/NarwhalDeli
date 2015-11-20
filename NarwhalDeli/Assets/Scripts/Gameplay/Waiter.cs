@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Waiter : MonoBehaviour {
     public static Waiter onDuty = null;
     private Horn horn;
+    private Text orderPad;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +15,13 @@ public class Waiter : MonoBehaviour {
         {
             onDuty = this;
         }
+        orderPad = GameObject.FindGameObjectWithTag("OrderPad").GetComponent<Text>();
+        WriteOrder();
+    }
+
+    void WriteOrder()
+    {
+        orderPad.text = "Sandwich";
     }
 
     public void DeliverSandwich(List<Food> sandwich)
