@@ -7,9 +7,11 @@ public class Waiter : MonoBehaviour {
     public static Waiter onDuty = null;
     private Horn horn;
     private Text orderPad;
+    private List<GameObject> sandwiches;
 
 	// Use this for initialization
 	void Start () {
+        sandwiches = new List<GameObject>();
         horn = GameObject.FindGameObjectWithTag("Horn").GetComponent<Horn>();
         if (onDuty == null)
         {
@@ -24,9 +26,10 @@ public class Waiter : MonoBehaviour {
         orderPad.text = "Sandwich";
     }
 
-    public void DeliverSandwich(Stack<Food> sandwich)
+    public void DeliverSandwich(GameObject sandwich)
     {
-        ServeSandwich(sandwich);
+        sandwiches.Add(sandwich);
+        //ServeSandwich(sandwich);
     }
 
     void ServeSandwich(Stack<Food> sandwich)

@@ -47,7 +47,6 @@ public class Horn : MonoBehaviour {
                 {
                     sandwich.Push(f);
                     // deliver sandwich
-                    Waiter.onDuty.DeliverSandwich(sandwich);
                     stacking = false;
                     StartCoroutine(SlideSandwichOffHorn(sandwich, 2));
                     
@@ -81,7 +80,8 @@ public class Horn : MonoBehaviour {
             elapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        Destroy(sandwichObject);
+        Waiter.onDuty.DeliverSandwich(sandwichObject);
+        sandwichObject.SetActive(false);
 
     }
 
