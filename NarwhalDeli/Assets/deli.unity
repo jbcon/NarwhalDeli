@@ -336,6 +336,14 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11461402, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: vrActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002890, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: field of view
+      value: 106
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
   m_IsPrefabParent: 0
@@ -596,6 +604,10 @@ Prefab:
       propertyPath: m_Text
       value: Order goes here
       objectReference: {fileID: 0}
+    - target: {fileID: 190290, guid: 1ebf4fede85b64340bf77f974302f907, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ebf4fede85b64340bf77f974302f907, type: 2}
   m_IsPrefabParent: 0
@@ -645,7 +657,7 @@ Prefab:
     - target: {fileID: 11485212, guid: 12d894eeab1035744b7235b8961e415f, type: 2}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 106302, guid: b340622a19796754ca6f6bc8b2ce42bb, type: 2}
+      objectReference: {fileID: 199108, guid: 093eb40359be46548be9155b57121443, type: 2}
     - target: {fileID: 11434674, guid: 12d894eeab1035744b7235b8961e415f, type: 2}
       propertyPath: sweepAngle
       value: 45

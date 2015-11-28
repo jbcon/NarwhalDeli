@@ -40,7 +40,7 @@ public class Food : MonoBehaviour {
     void FixedUpdate()
     {
         //buoyant force
-        if (transform.position.y < waterHeight)
+        if (transform.position.y < waterHeight && gameObject.layer != LayerMask.NameToLayer("FoodOnHorn"))
         {
             rb.velocity *= 0.3f;
             rb.AddForce((waterHeight - transform.position.y) * Vector3.up, ForceMode.Impulse);

@@ -24,12 +24,12 @@ public class Waiter : MonoBehaviour {
         orderPad.text = "Sandwich";
     }
 
-    public void DeliverSandwich(List<Food> sandwich)
+    public void DeliverSandwich(Stack<Food> sandwich)
     {
         ServeSandwich(sandwich);
     }
 
-    void ServeSandwich(List<Food> sandwich)
+    void ServeSandwich(Stack<Food> sandwich)
     {
         // scoring?
     }

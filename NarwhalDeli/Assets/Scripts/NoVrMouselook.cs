@@ -7,13 +7,14 @@ public class NoVrMouselook : MonoBehaviour {
     public float xMovement = 2;
     public float zMovement = 2;
     public float snapSpeed = 2;
+    public bool vrActive = false;
 
     private Vector3 initialPos;
 
 	// Use this for initialization
 	void Awake () {
 	    //check for oculus
-        if (!VRDevice.isPresent)
+        if (vrActive)
         {
             Debug.Log("Detected " + VRSettings.loadedDevice);
         }
@@ -22,13 +23,13 @@ public class NoVrMouselook : MonoBehaviour {
             Debug.Log("No VR device detected.  Initializing First Person Controller...");
             transform.gameObject.AddComponent<SimpleSmoothMouseLook>();
             initialPos = transform.position;
-            Camera.main.fov = 106;
+            Camera.main.fieldOfView = 106;
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    if (VRDevice.isPresent)
+	    if (!vrActive)
         {
             float movX = Input.GetAxisRaw("Horizontal") * xMovement;
             float movZ = Input.GetAxisRaw("Vertical") * zMovement;

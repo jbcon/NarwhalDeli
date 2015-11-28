@@ -7,13 +7,13 @@ public class Horn : MonoBehaviour {
     public GameObject bottom;
     public float slideDownSpeed = 1f;
     public float foodHeight = .3f;       // height of food for stacking (use y scale in the future!!)
-    List<Food> sandwich, allFood;
+    Stack<Food> sandwich, allFood;
     bool stacking;
 
 	// Use this for initialization
 	void Start () {
-        sandwich = new List<Food>();
-        allFood = new List<Food>();
+        sandwich = new Stack<Food>();
+        allFood = new Stack<Food>();
         stacking = false;
 	}
 	
@@ -36,7 +36,7 @@ public class Horn : MonoBehaviour {
             food.transform.localPosition = Vector3.zero;
             StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
             bottom.transform.position += bottom.transform.up * foodHeight;
-            allFood.Add(f);
+            allFood.Push(f);
             if (f.isBread)
             {
                 if (!stacking)
@@ -45,7 +45,7 @@ public class Horn : MonoBehaviour {
                 }
                 else
                 {
-                    sandwich.Add(f);
+                    sandwich.Push(f);
                     // deliver sandwich
                     Waiter.onDuty.DeliverSandwich(sandwich);
                     stacking = false;
@@ -56,22 +56,24 @@ public class Horn : MonoBehaviour {
             if (stacking)
             {
                 // only add to sandwich if preliminary bread piece has been caught
-                sandwich.Add(f);
+                sandwich.Push(f);
             }
         }
     }
 
-    IEnumerator SlideSandwichOffHorn(List<Food> sandwich, float seconds)
+    IEnumerator SlideSandwichOffHorn(Stack<Food> sandwich, float seconds)
     {
         yield return new WaitForSeconds(slideDownSpeed);
-        Debug.Break();
+        //Debug.Break();
         GameObject sandwichObject = new GameObject();
-        foreach (Food f in sandwich)
+        while (sandwich.Count > 0)
         {
+            Food f = sandwich.Pop();
+            f.transform.parent = sandwichObject.transform;
             f.gameObject.GetComponent<Collider>().enabled = false;
-            allFood.RemoveAt(allFood.Count - 1);
-            f.gameObject.transform.parent = sandwichObject.transform;
+            allFood.Pop();
         }
+        sandwich = new Stack<Food>();
         float elapsed = 0;
         while (elapsed < seconds)
         {
@@ -79,10 +81,8 @@ public class Horn : MonoBehaviour {
             elapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        foreach (Food f in sandwich)
-        {
-            Destroy(f.gameObject);
-        }
+        Destroy(sandwichObject);
+
     }
 
 	// Update is called once per frame
