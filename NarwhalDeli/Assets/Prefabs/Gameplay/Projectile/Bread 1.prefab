@@ -27,7 +27,7 @@ GameObject:
   - 114: {fileID: 11476134}
   - 65: {fileID: 6590450}
   m_Layer: 0
-  m_Name: Bread
+  m_Name: Bread 1
   m_TagString: Bread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
