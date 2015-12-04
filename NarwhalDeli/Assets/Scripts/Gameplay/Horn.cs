@@ -9,12 +9,14 @@ public class Horn : MonoBehaviour {
     public float foodHeight = .3f;       // height of food for stacking (use y scale in the future!!)
     Stack<Food> sandwich, allFood;
     bool stacking;
+    Vector3 bottomStart;
 
 	// Use this for initialization
 	void Start () {
         sandwich = new Stack<Food>();
         allFood = new Stack<Food>();
         stacking = false;
+        bottomStart = bottom.transform.localPosition;
 	}
 	
     public void AttachFood(GameObject food)
@@ -64,8 +66,10 @@ public class Horn : MonoBehaviour {
     {
         yield return new WaitForSeconds(slideDownSpeed);
         //Debug.Break();
+        bottom.transform.localPosition = bottomStart;
         GameObject sandwichObject = new GameObject();
-        sandwichObject.transform.position = sandwich.Peek().transform.position;
+        sandwichObject.name = "Sandwich";
+        //sandwichObject.transform.position = bottom.transform.position;
         while (sandwich.Count > 0)
         {
             Food f = sandwich.Pop();
@@ -74,7 +78,9 @@ public class Horn : MonoBehaviour {
             allFood.Pop();
         }
         sandwich = new Stack<Food>();
+        sandwichObject.transform.position = bottom.transform.position;
         float elapsed = 0;
+        Debug.Log("Sandwich launching from: " + sandwichObject.transform.position);
         while (elapsed < seconds)
         {
             sandwichObject.transform.Translate(transform.up * 20 * Time.deltaTime);
