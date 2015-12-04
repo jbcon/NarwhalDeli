@@ -8,6 +8,10 @@ TagManager:
   - FoodPile
   - Water
   - OrderPad
+  - Bread
+  - Tomato
+  - Cheese
+  - Meat
   layers:
   - Default
   - TransparentFX

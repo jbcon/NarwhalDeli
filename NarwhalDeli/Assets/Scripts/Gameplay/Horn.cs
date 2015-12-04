@@ -37,7 +37,7 @@ public class Horn : MonoBehaviour {
             StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
             bottom.transform.position += bottom.transform.up * foodHeight;
             allFood.Push(f);
-            if (f.isBread)
+            if (f.tag == "Bread")
             {
                 if (!stacking)
                 {
@@ -65,6 +65,7 @@ public class Horn : MonoBehaviour {
         yield return new WaitForSeconds(slideDownSpeed);
         //Debug.Break();
         GameObject sandwichObject = new GameObject();
+        sandwichObject.transform.position = sandwich.Peek().transform.position;
         while (sandwich.Count > 0)
         {
             Food f = sandwich.Pop();
