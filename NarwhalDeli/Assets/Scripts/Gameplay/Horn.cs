@@ -69,16 +69,17 @@ public class Horn : MonoBehaviour {
         bottom.transform.localPosition = bottomStart;
         GameObject sandwichObject = new GameObject();
         sandwichObject.name = "Sandwich";
-        //sandwichObject.transform.position = bottom.transform.position;
+        sandwichObject.transform.position = bottom.transform.position;
         while (sandwich.Count > 0)
         {
             Food f = sandwich.Pop();
             f.transform.parent = sandwichObject.transform;
+            f.transform.localPosition = sandwichObject.transform.InverseTransformPoint(f.transform.position);
             f.gameObject.GetComponent<Collider>().enabled = false;
             allFood.Pop();
         }
         sandwich = new Stack<Food>();
-        sandwichObject.transform.position = bottom.transform.position;
+        //sandwichObject.transform.position = bottom.transform.position;
         float elapsed = 0;
         Debug.Log("Sandwich launching from: " + sandwichObject.transform.position);
         while (elapsed < seconds)
