@@ -23,11 +23,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.96000004, y: 3.71000004, z: -14.2700005}
+  m_LocalPosition: {x: 8.96, y: 3.71, z: -14.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11405006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36,9 +37,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 155474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62727cfac9e72ee4bb79d7e93bb6e30c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f503368066ac9f4395005b1d00650f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxFoodInWater: 70
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

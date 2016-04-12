@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Horn : MonoBehaviour {
 
+    public AnimationCurve slideOffCurve;
+    public float distToFly = 30f;
     public GameObject bottom;
     public float slideDownSpeed = 1f;
     public float foodHeight = .3f;       // height of food for stacking (use y scale in the future!!)
@@ -50,7 +52,7 @@ public class Horn : MonoBehaviour {
                     sandwich.Push(f);
                     // deliver sandwich
                     stacking = false;
-                    StartCoroutine(SlideSandwichOffHorn(sandwich, 2));
+                    StartCoroutine(SlideSandwichOffHorn(sandwich, .85f));
                     
                 }
             }
@@ -80,15 +82,16 @@ public class Horn : MonoBehaviour {
         }
         sandwich = new Stack<Food>();
         //sandwichObject.transform.position = bottom.transform.position;
-        float elapsed = 0;
-        Debug.Log("Sandwich launching from: " + sandwichObject.transform.position);
-        while (elapsed < seconds)
+        float t = 0;
+        Vector3 startPos = sandwichObject.transform.position;
+        Vector3 endPos = startPos + transform.up * distToFly;
+        while (t < seconds)
         {
-            sandwichObject.transform.Translate(transform.up * 20 * Time.deltaTime);
-            elapsed += Time.deltaTime;
+            sandwichObject.transform.position = Vector3.Slerp(startPos, endPos, slideOffCurve.Evaluate(t / seconds));
+            t += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        Waiter.onDuty.DeliverSandwich(sandwichObject);
+        Supervisor.onDuty.DeliverSandwich(sandwichObject);
         sandwichObject.SetActive(false);
 
     }

@@ -16,16 +16,6 @@ public class Food : MonoBehaviour {
         waterHeight = GameObject.FindGameObjectWithTag("Water").transform.position.y+0.2f;
         rb = GetComponent<Rigidbody>();
 	}
-	
-    void OnCollisionEnter(Collision c)
-    {
-        int layer = c.gameObject.layer;
-        if (layer == LayerMask.NameToLayer("Water"))
-        {
-            onGround = true;
-            StartCoroutine(CommitSudoku());
-        }
-    }
 
     void OnTriggerEnter(Collider c)
     {
@@ -34,6 +24,11 @@ public class Food : MonoBehaviour {
         {
             gameObject.layer = LayerMask.NameToLayer("FoodOnHorn");
             c.GetComponent<Horn>().AttachFood(gameObject);
+        }
+        else if (layer == LayerMask.NameToLayer("Water") && !onGround)
+        {
+            onGround = true;
+            Supervisor.onDuty.AddFoodToFloor(gameObject);
         }
     }
 
@@ -72,9 +67,10 @@ public class Food : MonoBehaviour {
         }
     }
 
-    IEnumerator CommitSudoku()
+    /*IEnumerator CommitSudoku()
     {
+        Debug.Log("I'M DYIN LOL");
         yield return new WaitForSeconds(5f);
         Destroy(gameObject);
-    }
+    }*/
 }

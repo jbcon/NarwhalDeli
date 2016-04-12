@@ -12,6 +12,7 @@ TagManager:
   - Tomato
   - Cheese
   - Meat
+  - Flipper
   layers:
   - Default
   - TransparentFX

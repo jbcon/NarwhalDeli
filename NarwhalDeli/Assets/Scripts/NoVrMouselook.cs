@@ -16,7 +16,7 @@ public class NoVrMouselook : MonoBehaviour {
 	    //check for oculus
         if (vrActive)
         {
-            Debug.Log("Detected " + VRSettings.loadedDevice);
+            Debug.Log("Detected " + VRDevice.model);
         }
         else
         {
