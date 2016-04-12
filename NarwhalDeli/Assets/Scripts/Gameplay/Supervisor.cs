@@ -27,7 +27,7 @@ public class Supervisor : MonoBehaviour {
 
     void WriteOrder()
     {
-        orderPad.text = "Sandwich";
+        orderPad.text = "TOTAL: " + sandwiches.Count;
     }
 
     public void DeliverSandwich(GameObject sandwich)
@@ -53,6 +53,6 @@ public class Supervisor : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+        WriteOrder();
 	}
 }
