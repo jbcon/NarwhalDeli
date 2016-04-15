@@ -181,11 +181,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[0].outSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[1].time
@@ -201,15 +201,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: distToFly
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[1].inSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[1].outSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[2].time
@@ -229,27 +229,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[2].inSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[2].outSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[3].time
-      value: 0.8541667
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[3].value
-      value: 1.03125
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[3].inSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[3].outSlope
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[4].time
@@ -269,6 +269,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
       propertyPath: slideOffCurve.m_Curve.Array.data[2].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447892, guid: eea3db0de849bf14fac35170223b4ff0, type: 2}
+      propertyPath: slideOffCurve.m_Curve.Array.data[0].time
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

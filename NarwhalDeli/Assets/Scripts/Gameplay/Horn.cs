@@ -85,16 +85,36 @@ public class Horn : MonoBehaviour {
         float t = 0;
         Vector3 startPos = sandwichObject.transform.position;
         Vector3 endPos = startPos + transform.up * distToFly;
+
+        MeshRenderer[] renderers = sandwichObject.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer r in renderers)
+        {
+            r.material = new Material(r.material);
+        }
+
         while (t < seconds)
         {
             sandwichObject.transform.position = Vector3.Slerp(startPos, endPos, slideOffCurve.Evaluate(t / seconds));
             t += Time.deltaTime;
+            foreach (MeshRenderer r in renderers)
+            {
+                r.material.color = new Color(r.material.color.r, r.material.color.g, r.material.color.b, 1-(t / seconds));
+            }
             yield return new WaitForEndOfFrame();
         }
+
+        // reset for display later
+        foreach (MeshRenderer r in renderers)
+        {
+            r.material.color += new Color(0, 0, 0, 1);
+        }
+
         Supervisor.onDuty.DeliverSandwich(sandwichObject);
         sandwichObject.SetActive(false);
 
     }
+
+    
 
 	// Update is called once per frame
 	void Update () {
