@@ -13,7 +13,7 @@ public class Supervisor : MonoBehaviour {
     private int maxFoodInWater = 40;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         sandwiches = new List<GameObject>();
         foodInWater = new Queue<GameObject>();
         horn = GameObject.FindGameObjectWithTag("Horn").GetComponent<Horn>();
@@ -22,12 +22,21 @@ public class Supervisor : MonoBehaviour {
             onDuty = this;
         }
         orderPad = GameObject.FindGameObjectWithTag("OrderPad").GetComponent<Text>();
-        WriteOrder();
     }
 
     void WriteOrder()
     {
-        orderPad.text = "TOTAL: " + sandwiches.Count;
+        string message;
+        if (NDManager.manager.levelState == NDManager.LevelState.TITLE)
+        {
+            message = "";
+        }
+        else
+        {
+            message = "Total:\n" + sandwiches.Count;
+        }
+        orderPad.text = message;
+        
     }
 
     public void DeliverSandwich(GameObject sandwich)
