@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000012652050716}
   - 54: {fileID: 54000011762339722}
   m_Layer: 11
-  m_Name: Ketchup
+  m_Name: Mustard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2b19af0e7983d4a4daf3295ecbf5d32b, type: 2}
+  - {fileID: 2100000, guid: ff4fd0e1f94dade45af92b9bcd6ac655, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
