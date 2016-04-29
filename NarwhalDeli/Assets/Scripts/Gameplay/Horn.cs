@@ -12,6 +12,7 @@ public class Horn : MonoBehaviour {
     Stack<Food> sandwich, allFood;
     bool stacking;
     Vector3 bottomStart;
+    Transform sandwichTarget;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class Horn : MonoBehaviour {
         allFood = new Stack<Food>();
         stacking = false;
         bottomStart = bottom.transform.localPosition;
+        sandwichTarget = GameObject.FindGameObjectWithTag("SandwichTarget").transform;
 	}
 	
     public void AttachFood(GameObject food)
@@ -84,33 +86,44 @@ public class Horn : MonoBehaviour {
         //sandwichObject.transform.position = bottom.transform.position;
         float t = 0;
         Vector3 startPos = sandwichObject.transform.position;
-        Vector3 endPos = startPos + transform.up * distToFly;
+        Vector3 endPos = sandwichTarget.position;
 
-        MeshRenderer[] renderers = sandwichObject.GetComponentsInChildren<MeshRenderer>();
+        /*MeshRenderer[] renderers = sandwichObject.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer r in renderers)
         {
             r.material = new Material(r.material);
-        }
+        }*/
 
         while (t < seconds)
         {
             sandwichObject.transform.position = Vector3.Slerp(startPos, endPos, slideOffCurve.Evaluate(t / seconds));
             t += Time.deltaTime;
-            foreach (MeshRenderer r in renderers)
+            /*foreach (MeshRenderer r in renderers)
             {
                 r.material.color = new Color(r.material.color.r, r.material.color.g, r.material.color.b, 1-(t / seconds));
-            }
+            }*/
             yield return new WaitForEndOfFrame();
         }
-
+        /*
         // reset for display later
         foreach (MeshRenderer r in renderers)
         {
             r.material.color += new Color(0, 0, 0, 1);
         }
+        */
+        //BoxCollider b = sandwichObject.AddComponent<BoxCollider>();
+        sandwichObject.AddComponent<Rigidbody>();
+        //b.size = new Vector3(1f, foodHeight * sandwichObject.transform.childCount, 1f);
 
+        for (int i = 0; i < sandwichObject.transform.childCount; i++)
+        {
+            GameObject g = sandwichObject.transform.GetChild(i).gameObject;
+            g.GetComponent<Collider>().enabled = true;
+            g.layer = LayerMask.NameToLayer("Default");
+            Destroy(g.GetComponent<Rigidbody>());
+        }
         Supervisor.onDuty.DeliverSandwich(sandwichObject);
-        sandwichObject.SetActive(false);
+        //sandwichObject.SetActive(false);
 
     }
 

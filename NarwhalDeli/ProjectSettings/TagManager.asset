@@ -13,6 +13,7 @@ TagManager:
   - Cheese
   - Meat
   - Flipper
+  - SandwichTarget
   layers:
   - Default
   - TransparentFX
