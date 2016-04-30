@@ -38,12 +38,12 @@ GameObject:
   - 33: {fileID: 33000011137907684}
   - 23: {fileID: 23000011707883868}
   - 65: {fileID: 65000013083314970}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: sales_encounter_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000011279477268
 GameObject:
@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011279477268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.05, y: 0.57, z: -0.685}
+  m_LocalPosition: {x: -1.44, y: 0.57, z: -0.685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000013153181228}

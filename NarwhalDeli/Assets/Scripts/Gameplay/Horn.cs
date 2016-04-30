@@ -38,8 +38,7 @@ public class Horn : MonoBehaviour {
         {
             
             Food f = food.GetComponent<Food>();
-            allFood.Push(f);
-
+            
             if (f.tag == "Bread")
             {
                 if (!stacking)
@@ -48,6 +47,7 @@ public class Horn : MonoBehaviour {
                 }
                 else
                 {
+                    AddToHorn(food);
                     sandwich.Push(f);
                     // deliver sandwich
                     stacking = false;
@@ -57,15 +57,24 @@ public class Horn : MonoBehaviour {
             }
             if (stacking)
             {
-                food.GetComponent<Rigidbody>().isKinematic = true;
-                food.transform.parent = transform;
-                food.transform.localPosition = Vector3.zero;
-                StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
-                bottom.transform.position += bottom.transform.up * foodHeight;
+                AddToHorn(food);
+                allFood.Push(f);
                 // only add to sandwich if preliminary bread piece has been caught
                 sandwich.Push(f);
             }
         }
+    }
+
+    void AddToHorn(GameObject food)
+    {
+        Food f = food.GetComponent<Food>();
+        food.GetComponent<Rigidbody>().isKinematic = true;
+        food.transform.parent = transform;
+        food.transform.localPosition = Vector3.zero;
+        StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
+        bottom.transform.position += bottom.transform.up * foodHeight;
+        allFood.Push(f);
+
     }
 
     IEnumerator SlideSandwichOffHorn(Stack<Food> sandwich, float seconds)
