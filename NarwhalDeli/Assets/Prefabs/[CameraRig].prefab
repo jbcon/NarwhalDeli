@@ -27,6 +27,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000010314443320
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011346485196}
+  - 33: {fileID: 33000013425105218}
+  - 23: {fileID: 23000010704809566}
+  m_Layer: 0
+  m_Name: WireBottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010353455546
 GameObject:
   m_ObjectHideFlags: 1
@@ -72,7 +89,7 @@ GameObject:
   - 33: {fileID: 33000010995710684}
   - 23: {fileID: 23000010839751670}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: WireBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000011479596720
 GameObject:
   m_ObjectHideFlags: 1
@@ -125,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000011516846902
 GameObject:
   m_ObjectHideFlags: 1
@@ -151,6 +168,23 @@ GameObject:
   - 4: {fileID: 4000013670978978}
   m_Layer: 10
   m_Name: Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012260427054
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014201338058}
+  - 33: {fileID: 33000014055872944}
+  - 23: {fileID: 23000014036216212}
+  m_Layer: 0
+  m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +233,7 @@ GameObject:
   - 33: {fileID: 33000013666973684}
   - 23: {fileID: 23000010752501804}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Nozzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +318,7 @@ GameObject:
   - 33: {fileID: 33000011625906602}
   - 23: {fileID: 23000012274577642}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Nozzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,7 +351,7 @@ GameObject:
   - 33: {fileID: 33000011781984496}
   - 23: {fileID: 23000012604806000}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,12 +459,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011307383818}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: -0.108}
-  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
+  m_LocalRotation: {x: 0.7071069, y: -0, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0, z: -0.10799989}
+  m_LocalScale: {x: 0.12500066, y: 0.12500037, z: 0.12500037}
   m_Children: []
-  m_Father: {fileID: 4000011238837388}
-  m_RootOrder: 0
+  m_Father: {fileID: 4000013452755698}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4000011141558698
 Transform:
@@ -475,11 +509,25 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 4000011141328182}
+  - {fileID: 4000014201338058}
   - {fileID: 4000012308103988}
+  - {fileID: 4000011346485196}
   m_Father: {fileID: 4000012858487548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.587, y: 0, z: 0}
+--- !u!4 &4000011346485196
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010314443320}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0.00000016973354, z: -0.10799989}
+  m_LocalScale: {x: 0.12500036, y: 0.1250002, z: 0.1250002}
+  m_Children: []
+  m_Father: {fileID: 4000011238837388}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4000011557602272
 Transform:
   m_ObjectHideFlags: 1
@@ -658,6 +706,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4000013051794934}
+  - {fileID: 4000011141328182}
   - {fileID: 4000013932210420}
   m_Father: {fileID: 4000011141558698}
   m_RootOrder: 0
@@ -686,7 +735,7 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.06881794, z: 0.05}
   m_Children: []
   m_Father: {fileID: 4000013452755698}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4000013941985522
 Transform:
@@ -701,6 +750,19 @@ Transform:
   m_Father: {fileID: 4000011149983614}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4000014201338058
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012260427054}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0, z: -0.108}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
+  m_Children: []
+  m_Father: {fileID: 4000011238837388}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4000014219486816
 Transform:
   m_ObjectHideFlags: 1
@@ -782,6 +844,33 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!23 &23000010704809566
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010314443320}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 2b19af0e7983d4a4daf3295ecbf5d32b, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23000010752501804
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -917,6 +1006,33 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23000014036216212
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012260427054}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 2b19af0e7983d4a4daf3295ecbf5d32b, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23000014040643338
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -999,6 +1115,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013828614456}
   m_Mesh: {fileID: 4300002, guid: 9c43c9cdd59df5543acd74712a061447, type: 3}
+--- !u!33 &33000013425105218
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010314443320}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33000013493676404
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1012,6 +1135,13 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012748051982}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33000014055872944
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012260427054}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33000014076915634
 MeshFilter:
@@ -1062,6 +1192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proj: {fileID: 1000012503545976, guid: 997e1cf00c9333648a3dd8051f627740, type: 2}
   laser: {fileID: 1000011362822564}
+  bottle: {fileID: 1000013346792356}
+  cooldownRate: 3
+  slowMoTime: 8
 --- !u!114 &114000010485473186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1196,6 +1329,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proj: {fileID: 1000012503545976, guid: 2c4169665099cad46b6c86320b910311, type: 2}
   laser: {fileID: 1000011509747164}
+  bottle: {fileID: 1000012260427054}
+  cooldownRate: 3
+  slowMoTime: 8
 --- !u!114 &114000012340416326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1207,13 +1343,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e8a839a7c5b7e4580c59e305fb5f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
   color: {r: 1, g: 0, b: 0, a: 0}
   thickness: 0.002
+  thicknessPressed: 0.01
   holder: {fileID: 0}
   pointer: {fileID: 0}
   addRigidBody: 0
-  reference: {fileID: 0}
+  unityPointerIn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SteamVR_LaserPointer+PointerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  unityPointerOut:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SteamVR_LaserPointer+PointerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114000012618477306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1279,13 +1424,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e8a839a7c5b7e4580c59e305fb5f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
   color: {r: 0.9862069, g: 1, b: 0, a: 0}
   thickness: 0.002
+  thicknessPressed: 0.01
   holder: {fileID: 0}
   pointer: {fileID: 0}
   addRigidBody: 0
-  reference: {fileID: 0}
+  unityPointerIn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SteamVR_LaserPointer+PointerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  unityPointerOut:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SteamVR_LaserPointer+PointerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114000014110230766
 MonoBehaviour:
   m_ObjectHideFlags: 1
