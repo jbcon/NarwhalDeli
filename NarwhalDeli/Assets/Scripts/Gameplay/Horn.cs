@@ -36,13 +36,10 @@ public class Horn : MonoBehaviour {
         }
         else
         {
-            food.GetComponent<Rigidbody>().isKinematic = true;
-            food.transform.parent = transform;
+            
             Food f = food.GetComponent<Food>();
-            food.transform.localPosition = Vector3.zero;
-            StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
-            bottom.transform.position += bottom.transform.up * foodHeight;
             allFood.Push(f);
+
             if (f.tag == "Bread")
             {
                 if (!stacking)
@@ -60,6 +57,11 @@ public class Horn : MonoBehaviour {
             }
             if (stacking)
             {
+                food.GetComponent<Rigidbody>().isKinematic = true;
+                food.transform.parent = transform;
+                food.transform.localPosition = Vector3.zero;
+                StartCoroutine(f.SlideDownHorn(bottom.transform.localPosition, Quaternion.identity, slideDownSpeed));
+                bottom.transform.position += bottom.transform.up * foodHeight;
                 // only add to sandwich if preliminary bread piece has been caught
                 sandwich.Push(f);
             }
@@ -119,7 +121,7 @@ public class Horn : MonoBehaviour {
         {
             GameObject g = sandwichObject.transform.GetChild(i).gameObject;
             g.GetComponent<Collider>().enabled = true;
-            g.layer = LayerMask.NameToLayer("Default");
+            g.layer = LayerMask.NameToLayer("Sandwich");
             Destroy(g.GetComponent<Rigidbody>());
         }
         Supervisor.onDuty.DeliverSandwich(sandwichObject);
