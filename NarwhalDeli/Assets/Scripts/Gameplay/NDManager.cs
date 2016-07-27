@@ -17,4 +17,38 @@ public class NDManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void TransitionToGame(uint level)
+    {
+        // potentially use to restart game?
+        if (levelState == LevelState.GAME) return;
+        levelState = LevelState.GAME;
+        /* things to turn on for game:
+            - Horn script
+            - Cannons
+            - Scoreboard
+            - Supervisor
+           turn off:
+            - TitleBoard
+            - Menus
+        */
+
+        // do deactivations first
+        switch (levelState)
+        {
+            case LevelState.TITLE:
+
+                break;
+
+            default:
+                break;
+        }
+
+        GetComponent<Supervisor>().enabled = true;
+
+        // should only be one horn in scene
+        GameObject.FindGameObjectWithTag("Horn").GetComponent<Horn>().enabled = true;
+
+        // each level has its own food cannons
+    }
 }

@@ -8,14 +8,14 @@ public class Horn : MonoBehaviour {
     public float distToFly = 30f;
     public GameObject bottom;
     public float slideDownSpeed = 1f;
-    public float foodHeight = .3f;       // height of food for stacking (use y scale in the future!!)
+    public float foodHeight = .3f;       // height of food for stacking
     Stack<Food> sandwich, allFood;
     bool stacking;
     Vector3 bottomStart;
     Transform sandwichTarget;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         sandwich = new Stack<Food>();
         allFood = new Stack<Food>();
         stacking = false;

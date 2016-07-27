@@ -17,16 +17,16 @@ public class BallLauncher : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //StartCoroutine("Fire", firingInterval);
+        StartCoroutine("FireRepeatedly", firingInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lever && lever.CurrentLeverPosition == NVRLever.LeverPosition.On && lever.CurrentLeverPosition != lever.LastLeverPosition)
+        /*if (lever && lever.CurrentLeverPosition == NVRLever.LeverPosition.On && lever.CurrentLeverPosition != lever.LastLeverPosition)
         {
             Fire();
-        }
+        }*/
     }
 
     public void Fire()
