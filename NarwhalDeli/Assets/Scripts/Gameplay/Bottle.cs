@@ -33,7 +33,7 @@ public class Bottle : MonoBehaviour {
         SteamVR_Controller.Device device = SteamVR_Controller.Input((int)controller.index);
         if (canFire)
         {
-            if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
+            if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Grip))
             {
                 
                 laser.SetActive(false);
@@ -41,9 +41,9 @@ public class Bottle : MonoBehaviour {
                 StartCoroutine(RechargeBottle());
                 //StartCoroutine(SpeedTimeUp());
             }
-            else if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+            else if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Grip))
             {
-                laser.SetActive(true);
+                //laser.SetActive(true);
                 //Time.timeScale = 0.2f;
             }
         }
